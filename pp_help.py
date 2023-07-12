@@ -14,13 +14,13 @@ def main():
     net = pn.ieee_european_lv_asymmetric('on_peak_566') # create network
     net = load_all_phases(net) # add load wherever the load is 0
 
-    print("Asymmetric load table:") # print the load data before the powerflow
+    print("Asymmetric load table:")
     print(net.asymmetric_load) 
 
     pp.runpp_3ph(net) # run the three-phase powerflow
     # pp.runpp(net) # run standard powerflow
 
-    print("Result asymmetric load table:") # print the result loads of the powerflow
+    print("Result asymmetric load table:")
     print(net.res_asymmetric_load)
 
 main()
